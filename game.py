@@ -34,7 +34,8 @@ while game_running == True:
             if monster['health'] <= 0:
                 player_won = True
             else:
-                player['health'] = player['health'] - monster['attack']
+                monster_attack = randint(monster['attack_min'], monster['attack_max'])
+                player['health'] = player['health'] - monster_attack
                 if player['health'] <= 0:
                     monster_won = True
             
