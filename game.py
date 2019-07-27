@@ -1,10 +1,12 @@
+from random import randint
+
 game_running = True
 
 while game_running == True:
     new_round = True
 
     player = {'name': 'Manuel', 'attack': 13, 'heal': 16, 'health': 100}
-    monster = {'name': 'Max', "attack": 12, 'health': 100}
+    monster = {'name': 'Max', "attack_min": 10, 'attack_max': 20, 'health': 100}
 
     print('---' * 7)
     print('Enter Player name')
@@ -37,7 +39,12 @@ while game_running == True:
                     monster_won = True
             
         elif player_choice == '2':
-            print('Heal Player')
+            player['health'] = player['health'] + player['heal']
+            player['health'] = player['health'] - monster['attack']
+
+            if player['health'] <= 0:
+                monster_won = True
+            
 
         elif player_choice == '3':            
             game_running = False
