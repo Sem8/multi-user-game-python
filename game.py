@@ -59,7 +59,8 @@ while game_running == True:
         elif player_choice == '3':            
             game_running = False
             new_round = False
-        # elif player_choice == '4':
+        elif player_choice == '4':
+            print(game_results)
 
         else:
             print('Invalid Input')
@@ -72,13 +73,11 @@ while game_running == True:
             game_ends(player['name'])
             round_result = {'name': player['name'], 'health': player['health'], 'rounds': counter}
             game_results.append(round_result)
-            print(game_results)
             new_round = False
         elif monster_won:
             game_ends(monster['name'])
             round_result = {'name': player['name'], 'health': player['health'], 'rounds': counter}
             game_results.append(round_result)
-            print(game_results)
             new_round = False
             
 
