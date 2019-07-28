@@ -60,7 +60,8 @@ while game_running == True:
             game_running = False
             new_round = False
         elif player_choice == '4':
-            print(game_results)
+            for player_stat in game_results:
+                print(player_stat)            
 
         else:
             print('Invalid Input')
